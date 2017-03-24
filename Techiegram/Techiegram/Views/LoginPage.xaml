@@ -28,7 +28,7 @@
         <Image Source="logo.png" Margin="20" WidthRequest="150"/>
 
         <Entry Text="{Binding UserName}" Placeholder="Username"/>
-        <Entry Text="password" Placeholder="Password" IsPassword="True"/>
+        <Entry Text="{Binding Password}" Placeholder="Password" IsPassword="True"/>
         <Button Text="Sign In" TextColor="White" BackgroundColor="#47FFFFFF" Command="{Binding LoginCommand}"/>
         <Label Text="Forgot your password?"/>
         <Label Text="Don't have an account? Create one" Margin="0,20"/>

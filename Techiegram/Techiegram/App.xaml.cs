@@ -1,5 +1,6 @@
 ﻿using Prism.Unity;
 using Techiegram.Views;
+using Xamarin.Forms;
 
 namespace Techiegram
 {
@@ -16,6 +17,7 @@ namespace Techiegram
 
         protected override void RegisterTypes()
         {
+            Container.RegisterTypeForNavigation<NavigationPage>();
             Container.RegisterTypeForNavigation<MainPage>();
             Container.RegisterTypeForNavigation<LoginPage>();
         }
