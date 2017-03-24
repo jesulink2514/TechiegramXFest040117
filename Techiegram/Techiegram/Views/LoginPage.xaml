@@ -1,0 +1,36 @@
+﻿<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:xfg="clr-namespace:XFGloss;assembly=XFGloss"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             Title="Sign In"
+             x:Class="Techiegram.Views.LoginPage">
+    <xfg:ContentPageGloss.BackgroundGradient>
+        <xfg:Gradient Rotation="150">
+            <xfg:GradientStep StepColor="#FF0092" StepPercentage="0" />
+            <xfg:GradientStep StepColor="#FF0010" StepPercentage=".5" />
+            <xfg:GradientStep StepColor="#FF0072" StepPercentage="1" />
+        </xfg:Gradient>
+    </xfg:ContentPageGloss.BackgroundGradient>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Label">
+                <Setter Property="TextColor" Value="White"/>
+                <Setter Property="HorizontalOptions" Value="Fill"/>
+                <Setter Property="HorizontalTextAlignment" Value="Center" />
+            </Style>
+            <Style TargetType="Entry">
+                <Setter Property="TextColor" Value="White"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <StackLayout Padding="15">
+        <Image Source="logo.png" Margin="20" WidthRequest="150"/>
+
+        <Entry Text="{Binding UserName}" Placeholder="Username"/>
+        <Entry Text="password" Placeholder="Password" IsPassword="True"/>
+        <Button Text="Sign In" TextColor="White" BackgroundColor="#47FFFFFF" Command="{Binding LoginCommand}"/>
+        <Label Text="Forgot your password?"/>
+        <Label Text="Don't have an account? Create one" Margin="0,20"/>
+    </StackLayout>
+</ContentPage>
