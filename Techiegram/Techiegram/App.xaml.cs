@@ -1,4 +1,6 @@
-﻿using Prism.Unity;
+﻿using Microsoft.Practices.Unity;
+using Prism.Unity;
+using Techiegram.Services;
 using Techiegram.Views;
 using Xamarin.Forms;
 
@@ -17,6 +19,8 @@ namespace Techiegram
 
         protected override void RegisterTypes()
         {
+            Container.RegisterType<IFeedsService, FeedsService>();
+
             Container.RegisterTypeForNavigation<NavigationPage>();
             Container.RegisterTypeForNavigation<MainPage>();
             Container.RegisterTypeForNavigation<LoginPage>();

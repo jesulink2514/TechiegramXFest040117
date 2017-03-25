@@ -16,8 +16,6 @@ using Xamarin.Forms.Xaml;
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 [assembly: NeutralResourcesLanguage("en")]
-[assembly: XamlCompilation(XamlCompilationOptions.Compile)]
-
 // Version information for an assembly consists of the following four values:
 //
 //      Major Version
@@ -30,3 +28,4 @@ using Xamarin.Forms.Xaml;
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("1.0.0.0")]
 [assembly: AssemblyFileVersion("1.0.0.0")]
+[assembly: XamlCompilation(XamlCompilationOptions.Compile)]
