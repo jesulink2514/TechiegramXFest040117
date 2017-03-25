@@ -157,6 +157,7 @@
     <Content Include="Properties\AndroidManifest.xml" />
     <AndroidResource Include="Resources\drawable\logo.png" />
     <AndroidResource Include="Resources\drawable\photo.png" />
+    <AndroidResource Include="Resources\drawable\profile.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Techiegram\Techiegram.csproj">

@@ -25,9 +25,17 @@
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto"/>
                             <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
                         </Grid.RowDefinitions>
-                        <Image Source="{Binding ImageUrl}" HorizontalOptions="FillAndExpand" Aspect="AspectFit"/>
-                        <Label Grid.Row="1" Text="{Binding Title}" VerticalOptions="Start"/>
+                        <StackLayout Orientation="Horizontal" Margin="5,5,5,2">
+                            <Image Source="profile.png"/>
+                            <Label Text="{Binding Author.UserName}" FontAttributes="Bold"/>
+                        </StackLayout>
+                        <Image Grid.Row="1" Source="{Binding ImageUrl}" HorizontalOptions="FillAndExpand" Aspect="AspectFit"/>
+                        <StackLayout Grid.Row="2"  Margin="5,2,5,5" Orientation="Horizontal">
+                            <Label Text="{Binding Author.UserName}" VerticalOptions="Start" FontSize="Medium" FontAttributes="Bold"/>
+                            <Label Text="{Binding Title}" VerticalOptions="Fill" FontSize="Medium"/>
+                        </StackLayout>
                     </Grid>
                 </ViewCell>
             </DataTemplate>

@@ -17,25 +17,41 @@ namespace Techiegram.Services
                 {
                     Id = Guid.NewGuid(),
                     Title = "SomosTechies.com",
-                    ImageUrl = "https://instagram.flim2-1.fna.fbcdn.net/t51.2885-15/e35/17493786_177642709414779_2279584472519147520_n.jpg"
+                    ImageUrl = "https://instagram.flim2-1.fna.fbcdn.net/t51.2885-15/e35/17493786_177642709414779_2279584472519147520_n.jpg",
+                    Author = new User()
+                    {
+                        FullName = "Jesus Angulo",UserName = "jesulink2514", UserId = "17493786"
+                    }
                 },
                 new Post()
                 {
                     Id = Guid.NewGuid(),
                     Title = "Hi!!",
-                    ImageUrl = "https://instagram.flim2-1.fna.fbcdn.net/t51.2885-15/e35/17493786_177642709414779_2279584472519147520_n.jpg"
+                    ImageUrl = "https://instagram.flim2-1.fna.fbcdn.net/t51.2885-15/e35/17493786_177642709414779_2279584472519147520_n.jpg",
+                    Author = new User()
+                    {
+                        FullName = "Jesus Angulo",UserName = "jesulink2514", UserId = "17493786"
+                    }
                 },
                 new Post()
                 {
                     Id = Guid.NewGuid(),
                     Title = "Insta user",
-                    ImageUrl = "https://instagram.flim2-1.fna.fbcdn.net/t51.2885-15/e35/17493786_177642709414779_2279584472519147520_n.jpg"
+                    ImageUrl = "https://instagram.flim2-1.fna.fbcdn.net/t51.2885-15/e35/17493786_177642709414779_2279584472519147520_n.jpg",
+                    Author = new User()
+                    {
+                        FullName = "Jesus Angulo",UserName = "jesulink2514", UserId = "17493786"
+                    }
                 },
                 new Post()
                 {
                     Id = Guid.NewGuid(),
                     Title = "Photo 4",
-                    ImageUrl = "https://instagram.flim2-1.fna.fbcdn.net/t51.2885-15/e35/17493786_177642709414779_2279584472519147520_n.jpg"
+                    ImageUrl = "https://instagram.flim2-1.fna.fbcdn.net/t51.2885-15/e35/17493786_177642709414779_2279584472519147520_n.jpg",
+                    Author = new User()
+                    {
+                        FullName = "Jesus Angulo",UserName = "jesulink2514", UserId = "17493786"
+                    }
                 }
             });
         }
