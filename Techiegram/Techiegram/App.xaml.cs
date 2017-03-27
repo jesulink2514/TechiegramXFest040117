@@ -1,6 +1,4 @@
-﻿using Microsoft.Practices.Unity;
-using Prism.Unity;
-using Techiegram.Services;
+﻿using Prism.Unity;
 using Techiegram.Views;
 using Xamarin.Forms;
 
@@ -14,18 +12,13 @@ namespace Techiegram
         {
             InitializeComponent();
 
-            NavigationService.NavigateAsync("LoginPage");
+            NavigationService.NavigateAsync("NavigationPage/MainPage");
         }
 
         protected override void RegisterTypes()
         {
-            Container.RegisterType<IFeedsService,FakeFeedsService>();
-
             Container.RegisterTypeForNavigation<NavigationPage>();
             Container.RegisterTypeForNavigation<MainPage>();
-            Container.RegisterTypeForNavigation<LoginPage>();
-            Container.RegisterTypeForNavigation<PostPhotoPage>();
-            Container.RegisterTypeForNavigation<PostPhotoPage>();
         }
     }
 }

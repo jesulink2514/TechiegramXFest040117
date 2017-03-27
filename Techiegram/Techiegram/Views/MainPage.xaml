@@ -2,48 +2,8 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
-             xmlns:converters="clr-namespace:Techiegram.Converters;assembly=Techiegram"
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="Techiegram.Views.MainPage"
              Title="Techiegram">
-    <ContentPage.Resources>
-        <ResourceDictionary>
-            <Style TargetType="ListView">
-                <Setter Property="VerticalOptions" Value="Fill"/>
-                <Setter Property="HorizontalOptions" Value="Fill"/>
-            </Style>
-            <converters:LikesToTextConverter x:Key="Likes2Text" />
-        </ResourceDictionary>
-    </ContentPage.Resources>
-    <ContentPage.ToolbarItems>
-        <ToolbarItem Order="Primary" Icon="photo.png" Command="{Binding TakePhotoCommand}"/>
-    </ContentPage.ToolbarItems>
-    <ListView IsRefreshing="{Binding IsLoading}" IsPullToRefreshEnabled="True" HasUnevenRows="True"
-              RefreshCommand="{Binding RefreshCommand}" ItemsSource="{Binding Posts}">
-        <ListView.ItemTemplate>
-            <DataTemplate>
-                <ViewCell>
-                    <Grid>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto"/>
-                            <RowDefinition Height="Auto"/>
-                            <RowDefinition Height="30"/>
-                            <RowDefinition Height="30"/>
-                        </Grid.RowDefinitions>
-                        <StackLayout Orientation="Horizontal" Margin="5,5,5,2">
-                            <Image Source="profile.png" HeightRequest="15"/>
-                            <Label Text="{Binding Author.UserName}" FontAttributes="Bold"/>
-                        </StackLayout>
-                        <Image Grid.Row="1" Source="{Binding ImageUrl}" HeightRequest="400"
-                               HorizontalOptions="Fill" Aspect="AspectFill"/>
-                        <Label Grid.Row="2" Text="{Binding Likes,Converter={StaticResource Likes2Text}}"/>
-                        <StackLayout Grid.Row="3"  Margin="5,2,5,5" Orientation="Horizontal">
-                            <Label Text="{Binding Author.UserName}" VerticalOptions="Start" FontSize="Medium" FontAttributes="Bold"/>
-                            <Label Text="{Binding Title}" VerticalOptions="Fill" FontSize="Medium"/>
-                        </StackLayout>
-                    </Grid>
-                </ViewCell>
-            </DataTemplate>
-        </ListView.ItemTemplate>
-    </ListView>
+    <Label Text="Hello from Xamarin Fest Lima 2017" HorizontalOptions="Center" VerticalOptions="Center"></Label>
 </ContentPage>
