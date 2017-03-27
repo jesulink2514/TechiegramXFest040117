@@ -2,9 +2,6 @@
 using Prism.Commands;
 using Prism.Mvvm;
 using Prism.Navigation;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
@@ -12,7 +9,7 @@ namespace Techiegram.ViewModels
 {
     public class LoginPageViewModel : BindableBase, INavigationAware
     {
-        private INavigationService _navigationService;
+        private readonly INavigationService _navigationService;
         public string UserName { get; set; }
         public string Password { get; set; }
         public ICommand LoginCommand => new DelegateCommand(OnLogin,CanLogin)
@@ -27,6 +24,8 @@ namespace Techiegram.ViewModels
         public LoginPageViewModel(INavigationService navigationService)
         {
             _navigationService = navigationService;
+            UserName = "jesus.angulo";
+            Password = "mipassword";
         }
         private async void OnLogin()
         {
@@ -45,6 +44,11 @@ namespace Techiegram.ViewModels
         }
 
         public void OnNavigatedTo(NavigationParameters parameters)
+        {
+            
+        }
+
+        public void OnNavigatingTo(NavigationParameters parameters)
         {
             
         }

@@ -19,11 +19,13 @@ namespace Techiegram
 
         protected override void RegisterTypes()
         {
-            Container.RegisterType<IFeedsService, FeedsService>();
+            Container.RegisterType<IFeedsService,FakeFeedsService>();
 
             Container.RegisterTypeForNavigation<NavigationPage>();
             Container.RegisterTypeForNavigation<MainPage>();
             Container.RegisterTypeForNavigation<LoginPage>();
+            Container.RegisterTypeForNavigation<PostPhotoPage>();
+            Container.RegisterTypeForNavigation<PostPhotoPage>();
         }
     }
 }

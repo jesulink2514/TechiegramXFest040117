@@ -9,6 +9,7 @@ using Android.OS;
 using Prism.Unity;
 using Microsoft.Practices.Unity;
 using Acr.UserDialogs;
+using Plugin.Permissions;
 using Xamarin.Forms;
 
 namespace Techiegram.Droid
@@ -30,6 +31,11 @@ namespace Techiegram.Droid
             LoadApplication(new App(new AndroidInitializer()));
 
             XFGloss.Droid.Library.Init(this,bundle);
+        }
+
+        public override void OnRequestPermissionsResult(int requestCode, string[] permissions, Permission[] grantResults)
+        {
+            PermissionsImplementation.Current.OnRequestPermissionsResult(requestCode, permissions, grantResults);
         }
     }
 

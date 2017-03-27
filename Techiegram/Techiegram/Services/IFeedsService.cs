@@ -7,5 +7,6 @@ namespace Techiegram.Services
     public interface IFeedsService
     {
         Task<List<Post>> GetPostsForUserAsync(string userId,int page=1);
+        Task PostPhotoAsync(string photoUrl, string description);
     }
 }

@@ -8,6 +8,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Acr.UserDialogs;
+using Plugin.Media;
+using Plugin.Media.Abstractions;
+using Prism.Services;
 using Techiegram.Models;
 using Techiegram.Services;
 
@@ -16,6 +19,8 @@ namespace Techiegram.ViewModels
     public class MainPageViewModel : BindableBase, INavigationAware
     {
         private readonly IFeedsService _feedsService;
+        private readonly IPageDialogService _dialogService;
+        private readonly INavigationService _navigationService;
 
         public bool IsLoading { get; set; }
         public ObservableCollection<Post> Posts { get; set; }
@@ -24,19 +29,29 @@ namespace Techiegram.ViewModels
             await RefreshItems();
         });
 
-        public MainPageViewModel(IFeedsService feedsService)
+        public ICommand TakePhotoCommand => new DelegateCommand(async () =>
+        {
+            await CrossMedia.Current.Initialize();
+
+            var file = await CrossMedia.Current.TakePhotoAsync(new StoreCameraMediaOptions
+            {
+                PhotoSize = PhotoSize.Medium,
+                Directory = "techigramphotos",
+                Name = $"post-{DateTime.Now:yy-MM-dd}.jpg"
+            });
+
+            var parameter = new NavigationParameters {{"photo", file.Path}};
+            await _navigationService.NavigateAsync("PostPhotoPage", parameter);
+        });
+
+        public MainPageViewModel(
+            IFeedsService feedsService, 
+            IPageDialogService dialogService, 
+            INavigationService navigationService)
         {
             _feedsService = feedsService;
-        }
-
-        public void OnNavigatedFrom(NavigationParameters parameters)
-        {
-
-        }
-
-        public void OnNavigatedTo(NavigationParameters parameters)
-        {
-            Task.Run(async()=> await RefreshItems());
+            _dialogService = dialogService;
+            _navigationService = navigationService;
         }
 
         private async Task RefreshItems()
@@ -48,6 +63,19 @@ namespace Techiegram.ViewModels
             Posts = new ObservableCollection<Post>(post);
 
             IsLoading = false;
+        }
+
+        public void OnNavigatedFrom(NavigationParameters parameters)
+        {
+        }
+
+        public void OnNavigatedTo(NavigationParameters parameters)
+        {
+        }
+
+        public void OnNavigatingTo(NavigationParameters parameters)
+        {
+            Task.Run(async () => await RefreshItems());
         }
     }
 }
