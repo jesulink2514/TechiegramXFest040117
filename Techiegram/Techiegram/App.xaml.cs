@@ -1,6 +1,4 @@
-﻿using Microsoft.Practices.Unity;
-using Prism.Unity;
-using Techiegram.Services;
+﻿using Prism.Unity;
 using Techiegram.Views;
 using Xamarin.Forms;
 
