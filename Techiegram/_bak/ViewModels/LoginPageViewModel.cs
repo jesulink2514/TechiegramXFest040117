@@ -7,7 +7,7 @@ using System.Windows.Input;
 
 namespace Techiegram.ViewModels
 {
-    public class LoginPageViewModel : BindableBase, INavigationAware
+    public class LoginPageViewModel : BindableBase
     {
         private readonly INavigationService _navigationService;
         public string UserName { get; set; }
@@ -36,21 +36,6 @@ namespace Techiegram.ViewModels
             UserDialogs.Instance.HideLoading();
 
             await _navigationService.NavigateAsync("NavigationPage/MainPage");
-        }
-
-        public void OnNavigatedFrom(NavigationParameters parameters)
-        {
-            
-        }
-
-        public void OnNavigatedTo(NavigationParameters parameters)
-        {
-            
-        }
-
-        public void OnNavigatingTo(NavigationParameters parameters)
-        {
-            
         }
     }
 }

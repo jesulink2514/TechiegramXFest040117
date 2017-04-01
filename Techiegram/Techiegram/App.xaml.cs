@@ -14,18 +14,13 @@ namespace Techiegram
         {
             InitializeComponent();
 
-            NavigationService.NavigateAsync("LoginPage");
+            NavigationService.NavigateAsync("NavigationPage/MainPage");
         }
 
         protected override void RegisterTypes()
         {
-            Container.RegisterType<IFeedsService,FakeFeedsService>();
-
             Container.RegisterTypeForNavigation<NavigationPage>();
             Container.RegisterTypeForNavigation<MainPage>();
-            Container.RegisterTypeForNavigation<LoginPage>();
-            Container.RegisterTypeForNavigation<PostPhotoPage>();
-            Container.RegisterTypeForNavigation<PostPhotoPage>();
         }
     }
 }

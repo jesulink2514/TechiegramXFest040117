@@ -1,12 +1,12 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-//using Techiegram.Models;
+using Techiegram.Models;
 
 namespace Techiegram.Services
 {
     public interface IFeedsService
     {
-        //Task<List<Post>> GetPostsForUserAsync(string userId,int page=1);
+        Task<List<Post>> GetPostsForUserAsync(string userId,int page=1);
         Task PostPhotoAsync(string photoUrl, string description);
     }
 }
